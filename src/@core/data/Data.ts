@@ -116,7 +116,7 @@ export const Links: ITLink[] = [
   {
     id: 0,
     isActive: true,
-    label: "Home",
+    label: "Portfolio",
   },
   {
     id: 1,

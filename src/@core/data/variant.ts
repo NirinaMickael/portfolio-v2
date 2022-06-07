@@ -18,15 +18,20 @@ export const Rounded = {
   },
 };
 export const FadeOut = {
-  hidden: { opacity: 0.1, scale: 0, x: "-10vw" },
+  hidden: { opacity: 0.3 },
   visible: {
     opacity: 1,
-    scale: 1,
-    x: 0,
     transition: {
       delayChildren: 0.1,
       staggerChildren: 0.3,
     },
+  },
+};
+export const Chat = {
+  hidden: { opacity: 0.3 , x : "20vw"},
+  visible: {
+    opacity: 1,
+    x:0
   },
 };
 export const Item = {

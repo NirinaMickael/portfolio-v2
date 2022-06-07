@@ -1,8 +1,9 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import "./App.scss";
-import { Header, Home, About } from "./components";
+import { Header, Portfolio, About } from "./components";
 import Contact from "./components/public/Contact";
 import MyWork from "./components/public/Mywork";
+import Reviews from "./components/public/Remark";
 import Loading from "./features/Loading";
 import HeightContext from "./hook/Height";
 import LoadingContext from "./hook/Loading";
@@ -14,7 +15,7 @@ function App() {
   const [position, setPosition] = useState<number>(0);
   const [isVisited, setVisited] = useState<boolean>(false);
   const [_height, setHeight] = useState<number>(0);
-  const [Route, setRoute] = useState<string>("Home");
+  const [Route, setRoute] = useState<string>("Portfolio");
   const main = useRef(null);
   // const setVisited = useCallback((state: boolean) => {
   //   console.log(state);
@@ -73,10 +74,11 @@ function App() {
                     <Header routeActive={Route} />
                   </header>
                   <section>
-                    <Home editRoute={(e: string) => handleCurrentRoute(e)} />
+                    <Portfolio editRoute={(e: string) => handleCurrentRoute(e)} />
                     <About editRoute={(e: string) => handleCurrentRoute(e)} />
                     <MyWork editRoute={(e: string) => handleCurrentRoute(e)} />
                     <Contact editRoute={(e: string) => handleCurrentRoute(e)} />
+                    <Reviews  editRoute={(e: string) => handleCurrentRoute(e)} />
                   </section>
                   <footer></footer>
                 </HeightContext.Provider>
