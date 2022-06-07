@@ -1,26 +1,95 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import "./App.scss";
+import { Header, Home, About } from "./components";
+import Contact from "./components/public/Contact";
+import MyWork from "./components/public/Mywork";
+import Loading from "./features/Loading";
+import HeightContext from "./hook/Height";
+import LoadingContext from "./hook/Loading";
+import ScrollContext from "./hook/Scroll";
+import ThemeContext from "./hook/Theme";
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  const [position, setPosition] = useState<number>(0);
+  const [isVisited, setVisited] = useState<boolean>(false);
+  const [_height, setHeight] = useState<number>(0);
+  const [Route, setRoute] = useState<string>("Home");
+  const main = useRef(null);
+  // const setVisited = useCallback((state: boolean) => {
+  //   console.log(state);
+  // }, []);
+  const toggleDark = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
+  const handleCurrentRoute = useCallback((current: string) => {
+    setRoute(current);
+  }, []);
+
+  const handleScroll = (value: number) => {
+    // console.log(value);
+    setPosition(value);
+  };
+
+  const handleVisitState = (state: boolean) => {
+    setVisited(state);
+  };
+  useEffect(() => {
+    (main.current as unknown as HTMLElement).scrollTo(0, position);
+    // console.log(position);
+  }, [position]);
+
+  useEffect(() => {
+    setHeight((main.current as unknown as HTMLElement).scrollHeight);
+  }, [_height, isVisited]);
+
+  // handling scroll capture
+  const CaptureScroll = useCallback(
+    (e: React.UIEvent<HTMLElement, UIEvent>) => {
+      const pos = (e.target as HTMLElement).scrollTop;
+      setPosition(pos);
+    },
+    []
+  );
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <ThemeContext.Provider value={{ dark: isDarkMode, toggleDark: toggleDark }}>
+      <ScrollContext.Provider
+        value={{ position: position, handleScroll: handleScroll }}
+      >
+        <LoadingContext.Provider
+          value={{ isVisited: isVisited, setVisit: handleVisitState }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <div
+            ref={main}
+            className="app h-screen w-screen "
+            onScrollCapture={(e) => CaptureScroll(e)}
+          >
+            {!isVisited && <Loading />}
+            {isVisited && (
+              <main>
+                <HeightContext.Provider value={{ height: _height }}>
+                  <header>
+                    <Header routeActive={Route} />
+                  </header>
+                  <section>
+                    <Home editRoute={(e: string) => handleCurrentRoute(e)} />
+                    <About editRoute={(e: string) => handleCurrentRoute(e)} />
+                    <MyWork editRoute={(e: string) => handleCurrentRoute(e)} />
+                    <Contact editRoute={(e: string) => handleCurrentRoute(e)} />
+                  </section>
+                  <footer></footer>
+                </HeightContext.Provider>
+              </main>
+            )}
+          </div>
+        </LoadingContext.Provider>
+      </ScrollContext.Provider>
+    </ThemeContext.Provider>
   );
 }
 
 export default App;
+function current(current: any): any {
+  throw new Error("Function not implemented.");
+}

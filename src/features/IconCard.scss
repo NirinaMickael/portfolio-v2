@@ -1,0 +1,13 @@
+.icons{
+    left: 45%;
+    display: flex;
+    column-gap: 10px;
+}
+@media (max-width:500px){
+    .icons{
+        left: 30%;
+        right: 0;
+        display: flex;
+        column-gap: 5px;
+    }
+}
