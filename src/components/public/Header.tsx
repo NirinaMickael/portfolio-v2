@@ -41,7 +41,7 @@ const Headerc = ({routeActive} : {routeActive : string}) => {
     let scrollTo = 0;
     let index = 0;
     switch (currentLink) {
-      case "Home":
+      case "Portfolio":
         scrollTo = 0;
         index = 0;
         break;
@@ -56,6 +56,10 @@ const Headerc = ({routeActive} : {routeActive : string}) => {
       case "Contact":
         scrollTo = quarter * 3;
         index = 3;
+        break;
+        case "Reviews":
+          scrollTo = quarter * 4;
+          index = 4;
         break;
       default:
         break;

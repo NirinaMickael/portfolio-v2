@@ -1,5 +1,5 @@
 import About from "./public/About";
 import Header from "./public/Header";
-import Home from "./public/Home";
+import Portfolio from "./public/Home";
 
-export {Home , Header , About }  ;
+export {Portfolio , Header , About }  ;

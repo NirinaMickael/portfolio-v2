@@ -113,8 +113,8 @@ h1 {
   // margin-top: 4.5em;
   padding: 2em 4em;
 }
-/*Home*/
-#Home {
+/*Portfolio*/
+#Portfolio {
   background: url("../../public/profil.png") no-repeat;
   background-position: 100%;
   .wrapperTitle {
@@ -140,13 +140,12 @@ h1 {
 }
 /*My work*/
 .wrapperCard {
-
   .card {
     width: 100%;
     height: fit-content;
     display: grid;
     box-shadow: 2px 2px 10px #9996a0, -2px -2px 10px #aba9af;
-    transition: .3s;
+    transition: 0.3s;
     border-radius: 5px;
     .wrapperImage {
       transition: 1s;
@@ -154,32 +153,32 @@ h1 {
         text-align: center;
       }
     }
-    .description{
+    .description {
       transition: 0.5s;
     }
-    .cardHover{
+    .cardHover {
       transition: 0.5s;
       display: none;
-      .btn{
+      .btn {
         background-color: $secondary-color;
-        border-color:#ffffff;
-        &:hover{
+        border-color: #ffffff;
+        &:hover {
           background-color: $primary-color;
-          border-color:#0c0a0f;
+          border-color: #0c0a0f;
           color: $secondary-color;
         }
       }
     }
   }
 }
-.wrapperCard .card:hover{
+.wrapperCard .card:hover {
   background-color: #9d0b28;
   align-self: center;
 }
-.wrapperCard .card:hover .description{
+.wrapperCard .card:hover .description {
   color: $secondary-color;
 }
-.wrapperCard .card:hover .cardHover{
+.wrapperCard .card:hover .cardHover {
   transform: translateY(-3px);
   display: block;
 }
@@ -210,3 +209,41 @@ h1 {
   }
 }
 /*Contact*/
+#Contact {
+  .bg-image {
+    background: url("../../public/contact.svg") no-repeat center/90%;
+    .mycontact {
+      h1 {
+        color: $primary-color;
+      }
+      h3 {
+        text-align: center;
+      }
+      .button {
+        button {
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+  .chat {
+    width: 300px;
+    height: 450px;
+    background-color: $secondary-color;
+    position: absolute;
+    z-index: 22;
+    right: 10px;
+    bottom: 0;
+    .user{
+      &::before{
+        content: '';
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        background-color: #fafafa;
+        position: relative;
+      }
+    }
+  }
+}
