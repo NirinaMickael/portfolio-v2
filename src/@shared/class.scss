@@ -234,6 +234,7 @@ h1 {
     z-index: 22;
     right: 10px;
     bottom: 0;
+    grid-template-rows: 15% 75% 10%;
     .user{
       &::before{
         content: '';
@@ -247,3 +248,4 @@ h1 {
     }
   }
 }
+/****************************************/
