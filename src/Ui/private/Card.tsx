@@ -8,16 +8,16 @@ const Card = React.memo(({ card }: { card: ITCard }) => {
     <>
       <motion.div variants={Item} id={"card" + card.id} className="card">
         <div className="wrapperImage hidden md:grid">
-          <img src={card.image} alt="dsdsd" className="md:h-80 h-full m-auto" />
+          <img src={card.image} alt="dsdsd" className="m-auto w-40 h-40" />
         </div>
         <div className="description">
-          <p className="md:text-center text-justify mx-1">{card.description}</p>
+          <p className="md:text-center text-xs text-justify mx-1">{card.description}</p>
         </div>
         <div className="cardHover">
           <div className="wrapperIcon w-full flex p-2">
             {card.actions.map((item: ITAction, index) => {
               return (
-                <button className=" btn py-2 px-4   mx-2 border-b-4 rounded">
+                <button className=" btn py-1 px-2  text-xs  mx-2 border-b-4 rounded">
                   {item.label}
                 </button>
               );
@@ -29,7 +29,7 @@ const Card = React.memo(({ card }: { card: ITCard }) => {
                 <img
                   key={index}
                   src={item.image}
-                  className="w-10 mx-2"
+                  className="w-5 mx-2"
                   alt="no image"
                 />
               );

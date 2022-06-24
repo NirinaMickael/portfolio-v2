@@ -61,7 +61,7 @@ const Contact = ({ editRoute }: ITCurrentRoute) => {
           >
             {Data.map((item: any, index: number) => {
               return (
-                <motion.img
+                <motion.img key={index}
                   variants={Item}
                   src={item.image}
                   alt="no image"

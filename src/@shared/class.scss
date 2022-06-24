@@ -140,6 +140,11 @@ h1 {
 }
 /*My work*/
 .wrapperCard {
+  display: grid;
+  justify-content: space-around;
+  min-height: 100%;
+  justify-content: space-around;
+  align-content: space-around;
   .card {
     width: 100%;
     height: fit-content;
@@ -174,6 +179,7 @@ h1 {
 .wrapperCard .card:hover {
   background-color: #9d0b28;
   align-self: center;
+  padding: 2em;
 }
 .wrapperCard .card:hover .description {
   color: $secondary-color;
@@ -188,9 +194,11 @@ h1 {
 @media (max-width: 640px) {
   .wrapperCard {
     height: 100%;
+    grid-template-rows: repeat(2,45%);
+    grid-template-columns: repeat(2,45%);
     .card {
       grid-template-rows: 0.6fr 0.4fr;
-      height: 100%;
+      height:fit-content; 
       .wrapperImage {
         img {
         }
@@ -200,6 +208,9 @@ h1 {
 }
 @media (min-width: 640px) {
   .wrapperCard {
+    height: 100%;
+    grid-template-rows: repeat(2,50%);
+    grid-template-columns: repeat(3,30%);
     .card {
       grid-template-rows: repeat(2, fit-content);
       .wrapperImage {
@@ -234,16 +245,36 @@ h1 {
     z-index: 22;
     right: 10px;
     bottom: 0;
+    grid-template-rows: 15% 70% 10%;
+    align-content: space-around;
     .user{
       &::before{
-        content: '';
+        content:'';
         display: inline-block;
-        width: 60px;
-        height: 60px;
+        width: 40px;
+        height: 40px;
+        background-color: #9996a0;
         border-radius: 100%;
-        background-color: #fafafa;
         position: relative;
+      }
+    }
+    .wrapperChat {
+      display: grid;
+      .message{
+        font-weight: lighter;
+        box-shadow: 1px 2px 4px #9996a0;
+        height: fit-content;
+      }
+      .other{
+        background-color:$third-color;
+        justify-self: flex-start;
+      }
+      .own{
+        background-color: $primary-color;
+        color: $secondary-color;
+        justify-self: flex-end;
       }
     }
   }
 }
+/****************************************/

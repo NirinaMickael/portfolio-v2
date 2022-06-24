@@ -24,8 +24,7 @@ const MyWork = ({ editRoute }: ITCurrentRoute) => {
         variants={FadeOut}
         initial="hidden"
         animate={control}
-        className="wrapperCard grid grid-cols-1 mt-1 md:mt-6 grid-rows-3 md:grid-rows-1 md:grid-cols-3 
-         gap-y-2 md:gap-4 md:h-4/5"
+        className="wrapperCard m-3"
       >
         {Cards.map((item: ITCard, index: number) => {
           return <Card key={index} card={item}></Card>;
