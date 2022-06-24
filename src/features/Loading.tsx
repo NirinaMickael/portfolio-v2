@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState} from "react";
 import { motion, useAnimation } from "framer-motion";
-import "./Loading.scss";
 import LoadingContext from "../hook/Loading";
 const container = {
   hidden:(j: any)=>({ opacity: 1, x: 0, y: 0}),
