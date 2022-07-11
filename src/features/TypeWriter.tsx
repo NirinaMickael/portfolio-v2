@@ -1,6 +1,5 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
-import "./TypeWriter.scss";
 const data = ["web Developer", "and", "Mathematic Student"];
 export default function TypeWriter() {
   return (

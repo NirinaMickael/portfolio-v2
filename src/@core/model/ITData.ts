@@ -50,3 +50,16 @@ export interface ITAction{
     label : string;
     icon : string;
 }
+
+export interface IMessage {
+    id : number ;
+    isOther : boolean;
+    message : string;
+}
+
+export interface IRemark {
+    id : number;
+    username : string;
+    status : string ;
+    remark: string;
+}

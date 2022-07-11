@@ -5,6 +5,7 @@ import {
   ITSroll,
   ITCard,
   ITAction,
+  IMessage,
 } from "./../model/ITData";
 
 export const Emoji: ITEmoji[] = [
@@ -240,4 +241,47 @@ export const Cards: ITCard[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia soluta repudiandae ipsa adipisci, voluptatibus ea nobis necessitatibus maxime minima qui autem veritatis odit itaque quia commodi cumque magnam neque delectus",
   },
+  {
+    id: 2,
+    image: "/sudoku.gif",
+    actions: [
+      {
+        id: 0,
+        label: "Github",
+        icon:"/github-.svg"
+      },
+      {
+        id: 1,
+        label: "Demo",
+        icon:"/eyes.svg"
+      },
+    ],
+    tecno : [
+      {
+        id: 0,
+        label: "Sudoku",
+        image :"/js.svg"
+      },
+      {
+        id: 1,
+        label: "Css",
+        image:"/css.svg"
+      },
+    ],
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia soluta repudiandae ipsa adipisci, voluptatibus ea nobis necessitatibus maxime minima qui autem veritatis odit itaque quia commodi cumque magnam neque delectus",
+  }
+];
+
+export const Message : IMessage [] = [
+  {
+    id:0,
+    isOther : false,
+    message:"hey!!"
+  },
+  {
+    id : 1,
+    isOther: false,
+    message : "we are so glad to chat with you"
+  }
 ];

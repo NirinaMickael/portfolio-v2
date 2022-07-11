@@ -1,6 +1,5 @@
 import React from "react";
 import { GitHub, Facebook, LinkedIn, Instagram } from "@mui/icons-material";
-import "./IconCard.scss";
 import { motion } from "framer-motion";
 import { Item, Rounded } from "../@core/data/variant";
 
