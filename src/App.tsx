@@ -64,7 +64,7 @@ function App() {
           <div
             ref={main}
             className="app h-screen w-screen "
-            onScrollCapture={(e) => CaptureScroll(e)}
+            onScroll={(e) => CaptureScroll(e)}
           >
             {!isVisited && <Loading />}
             {isVisited && (
@@ -92,6 +92,3 @@ function App() {
 }
 
 export default App;
-function current(current: any): any {
-  throw new Error("Function not implemented.");
-}

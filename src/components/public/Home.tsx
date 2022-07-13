@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { memo, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import IconCard from "../../features/IconCard";
 import TypeWriter from "../../features/TypeWriter";
@@ -27,4 +27,4 @@ const Portfolio = ( {editRoute} : ITCurrentRoute) => {
     </div>
   );
 };
-export default Portfolio;
+export default memo(Portfolio);

@@ -46,24 +46,25 @@ const Headerc = ({routeActive} : {routeActive : string}) => {
         index = 0;
         break;
       case "About":
-        scrollTo = quarter * 1;
+        scrollTo = quarter * 0.75;
         index = 1;
         break;
       case "My work":
-        scrollTo = quarter * 2;
+        scrollTo = quarter * 1.75;
         index = 2;
         break;
       case "Contact":
-        scrollTo = quarter * 3;
+        scrollTo = quarter * 2.75;
         index = 3;
         break;
         case "Reviews":
-          scrollTo = quarter * 4;
+          scrollTo = quarter * 2.75;
           index = 4;
         break;
       default:
         break;
     }
+    console.log(scrollTo)
     setDataLink((_Links: ITLink[]) => {
       return _Links.map<ITLink>((_item: ITLink) => {
         return _item.id === index
