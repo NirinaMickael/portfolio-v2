@@ -1,94 +1,44 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
-import ThemeContext from "../../hook/Theme";
-import { motion, useAnimation } from "framer-motion";
-import { Transition , Rounded, Item } from "../../@core/data/variant";
+import React, { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { Item } from "../../@core/data/variant";
 import { Links } from "../../@core/data/Data";
-import { ITLink, ITSroll } from "../../@core/model/ITData";
-import ScrollContext from "../../hook/Scroll";
-import HeightContext from "../../hook/Height";
-
-
-const Headerc = ({routeActive} : {routeActive : string}) => {
+import { ITLink } from "../../@core/model/ITData";
+import { HashLink as Link } from "react-router-hash-link";
+import { useLocation, useNavigate } from "react-router-dom";
+const Headerc = () => {
   // &#10005; &#9776;
   const button = useRef(null);
-  const { dark, toggleDark } = useContext(ThemeContext);
-  const { position, handleScroll } = useContext(ScrollContext);
-  const { height } = useContext(HeightContext);
   const [DataLink, setDataLink] = useState<ITLink[]>(Links);
   const [showNav, setShowNav] = useState<boolean>(false);
   const [currentButton, setCurrentButton] = useState<string>("☰");
-  const quarter = height / 4;
-  const control = useAnimation();
-  const handleClick = () => {
-    toggleDark();
-  };
-  useEffect(() => {
-    if (position > 0) {
-      setShowNav(false);
-      setCurrentButton("☰");
-    }
-  }, [position]);
-  useEffect(()=>{
-    if(showNav){
-      control.start("visible");
-    }else{
-      control.start("hidden");
-    }
-  },[control,showNav]);
-  const setScroll = (e: React.UIEvent<HTMLElement, UIEvent>) => {
-    const currentLink = (e.target as HTMLElement).innerHTML;
-    setShowNav(false);
-    let scrollTo = 0;
-    let index = 0;
-    switch (currentLink) {
-      case "Portfolio":
-        scrollTo = 0;
-        index = 0;
-        break;
-      case "About":
-        scrollTo = quarter * 0.75;
-        index = 1;
-        break;
-      case "My work":
-        scrollTo = quarter * 1.75;
-        index = 2;
-        break;
-      case "Contact":
-        scrollTo = quarter * 2.75;
-        index = 3;
-        break;
-        case "Reviews":
-          scrollTo = quarter * 2.75;
-          index = 4;
-        break;
-      default:
-        break;
-    }
-    console.log(scrollTo)
-    setDataLink((_Links: ITLink[]) => {
-      return _Links.map<ITLink>((_item: ITLink) => {
-        return _item.id === index
-          ? { ..._item, isActive: true }
-          : { ..._item, isActive: false };
-      });
-    });
-    handleScroll(scrollTo);
-  };
+  const navigate = useNavigate();
+  const location = useLocation();
   const handleToggleButton = () => {
-    setCurrentButton((current) => {
-      return current === "☰" ? "✕" : "☰";
-    });
-    handleScroll(0);
-    setShowNav((current) => !current);
+    if(currentButton==='☰'){
+      document.getElementById('Portfolio')?.scrollIntoView({behavior:'smooth'});
+      navigate('/');
+    }
+    setCurrentButton(cur=>cur==='☰'?'✕':'☰')
+    setShowNav(cu=>!cu);
   };
-
-
+  useEffect(()=>{
+    const hash = location.hash;
+    let link = hash.split('#').pop() as string;
+    const el = hash && document.getElementById(link);
+    if(el){
+      el.scrollIntoView({behavior:'smooth'});
+    } 
+  },[location.hash])
+  const handleLink =(e:React.UIEvent<HTMLElement,UIEvent>)=>{
+    setShowNav(cu=>false);
+    setCurrentButton(cu=>'☰');
+    let cur = (e.target as HTMLElement).innerHTML;
+    setDataLink(current=>current.map((el,i)=>el.label===cur?{...el,isActive:true}:{...el,isActive:false}));
+  }
   return (
     <>
-      <div
-        className={`${position !== 0 ? "header w-screen" : "header w-screen"}`}
-      >
-        <h1>{routeActive}</h1>
+      <div className="header w-screen">
+        <h1>Portfolio</h1>
         <span
           ref={button}
           className=" buttonToggle"
@@ -97,32 +47,35 @@ const Headerc = ({routeActive} : {routeActive : string}) => {
           {currentButton}
         </span>
       </div>
-      {showNav && position == 0 && (
-        <div className="nav w-full md:x-auto">
-          <nav className="w-full">
-            <motion.ul 
-              variants={Rounded}
-              initial="hidden"
-              animate={control}
-            className="w-full  grid grid-cols-4 grid-rows-1">
-              {DataLink.map((data: ITLink) => {
+      {showNav && (
+      <div className="nav w-full md:x-auto">
+          <p>kiku</p>
+           <nav className="w-full">
+            <ul
+              // variants={Rounded}
+              // initial="hidden"
+              // animate={control}
+              className="w-full  grid grid-cols-4 grid-rows-1"
+            >
+              {DataLink.map((data: ITLink,index:number) => {
                 return (
                   <motion.li
                     variants={Item}
                     key={data.id}
                     className="text-center grid items-center"
                   >
-                    <a
+                    <Link
+                      to={`/#${data.label.replace(/\s+/g,'')}`}
                       className={`${data.isActive ? "active" : ""}`}
-                      onClick={(e) => setScroll(e)}
+                      onClick={(e)=>handleLink(e)}
                     >
                       {data.label}
-                    </a>
+                    </Link>
                   </motion.li>
                 );
               })}
-            </motion.ul>
-          </nav>
+            </ul>
+          </nav> 
         </div>
       )}
     </>

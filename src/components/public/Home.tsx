@@ -2,15 +2,11 @@ import React, { memo, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import IconCard from "../../features/IconCard";
 import TypeWriter from "../../features/TypeWriter";
-import { ITCurrentRoute } from "../../@core/model/ITData";
-const Portfolio = ( {editRoute} : ITCurrentRoute) => {
-  const { ref, inView, entry } = useInView({
+const Portfolio = ( ) => {
+  const { ref, inView } = useInView({
     threshold:1
   });
   useEffect(()=>{
-    if(inView) {
-    editRoute("Portfolio");
-    }
   },[inView]);
   return (
     <div id="Portfolio" ref={ref} className="BaseWrapper flex h-screen w-screen">

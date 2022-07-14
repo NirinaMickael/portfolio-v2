@@ -1,8 +1,7 @@
 import { motion, useAnimation } from "framer-motion";
-import React, { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { FadeOut, Item, Rounded } from "../../@core/data/variant";
-import { ITCurrentRoute } from "../../@core/model/ITData";
 import {CallMadeOutlined , Chat , Close} from '@mui/icons-material'
 import Chats from "../../features/Chat";
 const Data = [
@@ -24,13 +23,12 @@ const Data = [
   },
 ];
 
-const Contact = ({ editRoute }: ITCurrentRoute) => {
+const Contact = ( )=> {
   const { ref, inView } = useInView({ threshold: 0.4 });
   const [chat , setChat] = useState<boolean>(false);
   const control = useAnimation();
   useEffect(() => {
     if (inView) {
-      editRoute("Contact");
       control.start("visible");
     } else {
       control.start("hidden");

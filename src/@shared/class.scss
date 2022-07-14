@@ -7,7 +7,7 @@ $text-size: 20px;
 * {
   transition: background 0.3s ease-in-out;
 }
-html {
+html, .app {
   scroll-behavior: smooth;
 }
 /*Commun*/
@@ -112,7 +112,8 @@ h1 {
 /*Portfolio*/
 #Portfolio {
   background: url("../../public/profil.png") no-repeat;
-  background-position: 100%;
+  background-position: 65%;
+  background-size: 70%;
   .wrapperTitle {
     align-self: center;
     margin: 1em 0;
@@ -195,10 +196,6 @@ h1 {
     .card {
       grid-template-rows: 0.6fr 0.4fr;
       height:fit-content; 
-      .wrapperImage {
-        img {
-        }
-      }
     }
   }
 }
@@ -209,9 +206,6 @@ h1 {
     grid-template-columns: repeat(3,30%);
     .card {
       grid-template-rows: repeat(2, fit-content);
-      .wrapperImage {
-        // border: 1px solid red;
-      }
     }
   }
 }
