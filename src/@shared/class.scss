@@ -1,7 +1,3 @@
-/*
-   primary-color : Indigo-50
-   second-color : Indigo-600
-*/
 $primary-color: #2a2438;
 $secondary-color: #dbd8e3;
 $third-color: #9d0b28;
@@ -11,7 +7,7 @@ $text-size: 20px;
 * {
   transition: background 0.3s ease-in-out;
 }
-html {
+html, .app {
   scroll-behavior: smooth;
 }
 /*Commun*/
@@ -116,7 +112,8 @@ h1 {
 /*Portfolio*/
 #Portfolio {
   background: url("../../public/profil.png") no-repeat;
-  background-position: 100%;
+  background-position: 65%;
+  background-size: 70%;
   .wrapperTitle {
     align-self: center;
     margin: 1em 0;
@@ -199,10 +196,6 @@ h1 {
     .card {
       grid-template-rows: 0.6fr 0.4fr;
       height:fit-content; 
-      .wrapperImage {
-        img {
-        }
-      }
     }
   }
 }
@@ -213,9 +206,6 @@ h1 {
     grid-template-columns: repeat(3,30%);
     .card {
       grid-template-rows: repeat(2, fit-content);
-      .wrapperImage {
-        // border: 1px solid red;
-      }
     }
   }
 }
@@ -240,7 +230,7 @@ h1 {
   .chat {
     width: 300px;
     height: 450px;
-    background-color: $secondary-color;
+    background-color: #ffffff;
     position: absolute;
     z-index: 22;
     right: 10px;
@@ -260,13 +250,16 @@ h1 {
     }
     .wrapperChat {
       display: grid;
+      overflow: auto;
       .message{
         font-weight: lighter;
         box-shadow: 1px 2px 4px #9996a0;
         height: fit-content;
+        word-break: break-all;
       }
       .other{
-        background-color:$third-color;
+        background-color: $secondary-color;
+        color: $primary-color;;
         justify-self: flex-start;
       }
       .own{
