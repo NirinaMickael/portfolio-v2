@@ -4,22 +4,17 @@ import { useInView } from "react-intersection-observer";
 import { FadeOut, Item, Rounded } from "../../@core/data/variant";
 import {CallMadeOutlined , Chat , Close} from '@mui/icons-material'
 import Chats from "../../features/Chat";
+import { useNavigate } from "react-router-dom";
 const Data = [
   {
     id: 0,
     image: "/facebook.png",
+    url:"https://www.facebook.com/roi.mickael"
   },
   {
     id: 1,
-    image: "/whatapp.jpeg",
-  },
-  {
-    id: 2,
     image: "/linkdin.png",
-  },
-  {
-    id: 3,
-    image: "/mail.png",
+    url:"https://www.linkedin.com/in/todisoa-nirina-mickael-7345b2227/"
   },
 ];
 
@@ -27,6 +22,7 @@ const Contact = ( )=> {
   const { ref, inView } = useInView({ threshold: 0.4 });
   const [chat , setChat] = useState<boolean>(false);
   const control = useAnimation();
+  const nav= useNavigate();
   useEffect(() => {
     if (inView) {
       control.start("visible");
@@ -38,7 +34,9 @@ const Contact = ( )=> {
   const HandleClick = () => {
     setChat(!chat);
   }
-
+  const navigate = (url : string)=>{
+    window.open(url,'_blank', 'noopener,noreferrer')
+  }
   return (
     <div id="Contact" ref={ref} className="BaseWrapper h-screen w-screen">
       <h2 className="sectionTitle">Contact</h2>
@@ -64,6 +62,7 @@ const Contact = ( )=> {
                   src={item.image}
                   alt="no image"
                   className="w-full w-10 mx-2"
+                  onClick={()=>navigate(item.url)}
                 />
               );
             })}

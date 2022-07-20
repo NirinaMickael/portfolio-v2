@@ -122,17 +122,17 @@ export const Links: ITLink[] = [
   {
     id: 1,
     isActive: false,
-    label: "About",
+    label: "My work",
   },
   {
     id: 2,
     isActive: false,
-    label: "My work",
+    label: "Contact",
   },
   {
     id: 3,
     isActive: false,
-    label: "Contact",
+    label: "Remark",
   },
 ];
 
@@ -144,37 +144,38 @@ export const Cards: ITCard[] = [
       {
         id: 0,
         label: "Github",
-        icon:"/github-.svg"
+        icon: "/github-.svg",
       },
       {
         id: 1,
         label: "Demo",
-        icon:"/eyes.svg"
+        icon: "/eyes.svg",
       },
     ],
-    tecno : [
+    tecno: [
       {
         id: 0,
         label: "Angular",
-        image :"/angular.svg"
+        image: "/angular.svg",
       },
       {
         id: 1,
         label: "Mongo",
-        image:"/mongo.svg"
+        image: "/mongo.svg",
       },
       {
         id: 2,
         label: "Node",
-        image:"/node.svg"
+        image: "/node.svg",
       },
       {
-        id : 3 ,
-        label:'bootstrap',
-        image:'/boostra.svg'
-      }
+        id: 3,
+        label: "bootstrap",
+        image: "/boostra.svg",
+      },
     ],
-    description : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia soluta repudiandae ipsa adipisci, voluptatibus ea nobis necessitatibus maxime minima qui autem veritatis odit itaque quia commodi cumque magnam neque delectus"
+    description:
+      "Simple chat application,user can send and receive messages at the same time, and can change his profile picture",
   },
   {
     id: 1,
@@ -183,30 +184,60 @@ export const Cards: ITCard[] = [
       {
         id: 0,
         label: "Github",
-        icon:"/github-.svg"
+        icon: "/github-.svg",
       },
       {
         id: 1,
         label: "Demo",
-        icon:"/eyes.svg"
+        icon: "/eyes.svg",
       },
     ],
-    tecno : [
+    tecno: [
       {
         id: 0,
         label: "React",
-        image :"/react.svg"
+        image: "/react.svg",
       },
       {
         id: 1,
         label: "Firebase",
-        image:"/firebase.svg"
+        image: "/firebase.svg",
       },
       {
         id: 2,
         label: "Tailwind",
-        image:"/tailwind.svg"
-      }
+        image: "/tailwind.svg",
+      },
+    ],
+    description:
+      "Todo list, new design and more functionality, dynamic. Which uses techno reactTs and firebase to store data",
+  },
+  {
+    id: 2,
+    image: "/sudoku.gif",
+    actions: [
+      {
+        id: 0,
+        label: "Github",
+        icon: "/github-.svg",
+      },
+      {
+        id: 1,
+        label: "Demo",
+        icon: "/eyes.svg",
+      },
+    ],
+    tecno: [
+      {
+        id: 0,
+        label: "Sudoku",
+        image: "/js.svg",
+      },
+      {
+        id: 1,
+        label: "Css",
+        image: "/css.svg",
+      },
     ],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia soluta repudiandae ipsa adipisci, voluptatibus ea nobis necessitatibus maxime minima qui autem veritatis odit itaque quia commodi cumque magnam neque delectus",
@@ -218,70 +249,40 @@ export const Cards: ITCard[] = [
       {
         id: 0,
         label: "Github",
-        icon:"/github-.svg"
+        icon: "/github-.svg",
       },
       {
         id: 1,
         label: "Demo",
-        icon:"/eyes.svg"
+        icon: "/eyes.svg",
       },
     ],
-    tecno : [
+    tecno: [
       {
         id: 0,
         label: "Sudoku",
-        image :"/js.svg"
+        image: "/js.svg",
       },
       {
         id: 1,
         label: "Css",
-        image:"/css.svg"
+        image: "/css.svg",
       },
     ],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia soluta repudiandae ipsa adipisci, voluptatibus ea nobis necessitatibus maxime minima qui autem veritatis odit itaque quia commodi cumque magnam neque delectus",
   },
-  {
-    id: 2,
-    image: "/sudoku.gif",
-    actions: [
-      {
-        id: 0,
-        label: "Github",
-        icon:"/github-.svg"
-      },
-      {
-        id: 1,
-        label: "Demo",
-        icon:"/eyes.svg"
-      },
-    ],
-    tecno : [
-      {
-        id: 0,
-        label: "Sudoku",
-        image :"/js.svg"
-      },
-      {
-        id: 1,
-        label: "Css",
-        image:"/css.svg"
-      },
-    ],
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia soluta repudiandae ipsa adipisci, voluptatibus ea nobis necessitatibus maxime minima qui autem veritatis odit itaque quia commodi cumque magnam neque delectus",
-  }
 ];
 
-export const Message : IMessage [] = [
+export const Message: IMessage[] = [
   {
-    id:0,
-    isOther : false,
-    message:"hey!!"
+    id: 0,
+    isOther: false,
+    message: "hey!!",
   },
   {
-    id : 1,
+    id: 1,
     isOther: false,
-    message : "we are so glad to chat with you"
-  }
+    message: "we are so glad to chat with you",
+  },
 ];

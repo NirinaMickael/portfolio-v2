@@ -1,5 +1,5 @@
 $primary-color: #2a2438;
-$secondary-color: #dbd8e3;
+$secondary-color: #e4dff5;
 $third-color: #9d0b28;
 $title-size: 45px;
 $subtitle-size: 30px;
@@ -53,16 +53,21 @@ h1 {
   width: 100px;
   height: 200px;
 }
-.sectionTitle {
+.sectionTitle,.subSectionTitle {
   font-size: $subtitle-size;
   color: #9d0b28;
-
   &::after {
     content: "";
     display: block;
     width: 50px;
     height: 5px;
     background-color: $third-color;
+  }
+}
+.subSectionTitle {
+  font-size: 17px;
+  &::after {
+    width: 110px;
   }
 }
 /*MAIN*/
@@ -133,6 +138,15 @@ h1 {
   }
   .button {
     align-self: flex-end;
+  }
+  .tech{
+    margin: .5em;
+    display: flex;
+    flex-wrap: wrap;
+    div{
+      background-color: $secondary-color;
+
+    }
   }
 }
 /*My work*/

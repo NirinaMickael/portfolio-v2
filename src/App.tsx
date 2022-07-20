@@ -1,6 +1,6 @@
 import React, {useRef, useState } from "react";
 import "./App.scss";
-import { Header, Portfolio, About } from "./components";
+import { Header, Portfolio } from "./components";
 import Contact from "./components/public/Contact";
 import MyWork from "./components/public/Mywork";
 import Reviews from "./components/public/Remark";
@@ -35,7 +35,6 @@ function App() {
               </header>
               <section>
                 <Portfolio />
-                <About />
                 <MyWork />
                 <Contact />
                 <Reviews />
