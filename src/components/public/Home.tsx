@@ -36,14 +36,13 @@ const Portfolio = () => {
     <div
       id="Portfolio"
       ref={ref}
-      className="BaseWrapper flex h-screen w-screen"
+      className="BaseWrapper app flex h-screen w-screen"
     >
       <div className="wrapperTitle">
         <h1 className="gradient-text">
           Hi <span className="text-red">👋</span> ! I'm Mickael{" "}
         </h1>
         {inView && <TypeWriter />}
-        <br />
         <h3>
           Full stack web developer junior, freelancer, Code addict.
           <br /> Based in Madagascar.
@@ -52,7 +51,7 @@ const Portfolio = () => {
           Since I have math skills and I know how to code, <br />I aim to become a
           data scientist and a good developer.
         </h3>
-        <br /><br />
+        <br />
         <h4 className="text-s subSectionTitle">All Tech Stacks</h4>
         <div className="w-2/4 tech">
           {

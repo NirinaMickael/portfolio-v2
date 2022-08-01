@@ -1,0 +1,81 @@
+@media (max-width: 850px) {
+  /*Portfolio*/
+  #Portfolio {
+    background-position: 100%;
+    background-size: 500px;
+    display: block;
+  }
+}
+@media (max-width: 500px) {
+  /*Portfolio*/
+  #Portfolio {
+    background: none;
+    padding: 0;
+  }
+  .BaseWrapper {
+    padding: 0.3em;
+  }
+}
+
+@media (max-width: 755px) {
+  .wrapperCard {
+    row-gap: 20px;
+    height:max-content;
+    .card {
+      grid-template-rows: 0.6fr 0.4fr;
+      height: fit-content;
+      width: 45%;
+    //   background-color: #9d0b28;
+      align-self: center;
+      padding: 2em;
+      p{
+        color: black;
+      }
+      .description {
+        color: $secondary-color;
+      }
+      .cardHover {
+        transform: translateY(-3px);
+        display: block;
+      }
+      .wrapperImage {
+        display: none;
+      }
+    }
+  }
+}
+@media (max-width: 640px) {
+    #Portfolio {
+        background: none;
+    }
+    #MyWork{
+        height:200vh;
+    }
+  .wrapperCard {
+    row-gap: 20px;
+    height:max-content;
+    .card {
+      grid-template-rows: 0.6fr 0.4fr;
+      height: fit-content;
+      width: 95%;
+      background-color: #9d0b28;
+      align-self: center;
+      padding: 2em;
+      .description {
+        color: $secondary-color;
+      }
+      .cardHover {
+        transform: translateY(-3px);
+        display: block;
+      }
+      .wrapperImage {
+        display: none;
+      }
+    }
+  }
+  #Contact {
+    .bg-image {
+      background: url("../../public/contact.svg") no-repeat top/100vw;
+    }
+  }
+}

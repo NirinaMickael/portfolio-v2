@@ -18,7 +18,6 @@ const Reviews = () => {
   const { ref, inView } = useInView({ threshold: 0.4 });
   useEffect(() => {}, [inView]);
   const AddData = useCallback((data: IRemark) => {
-    console.log(data);
     addRemark(data);
   }, []);
   return (

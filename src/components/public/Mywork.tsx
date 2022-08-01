@@ -17,7 +17,7 @@ const MyWork = () => {
     }
   }, [inView]);
   return (
-    <div id="Mywork" ref={ref} className="BaseWrapper h-screen w-screen">
+    <div id="Mywork" ref={ref} className="BaseWrapper w-screen">
       <h2 className="sectionTitle">My Work</h2>
       <motion.div
         variants={FadeOut}

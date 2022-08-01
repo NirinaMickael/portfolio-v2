@@ -74,6 +74,7 @@ h1 {
 .app {
   overflow-y: scroll;
   // max-height: 100vh;
+  min-width: 100vw;
 }
 
 /* HEADER*/
@@ -112,16 +113,15 @@ h1 {
 }
 .BaseWrapper {
   // margin-top: 4.5em;
-  padding: 2em 4em;
+  padding: 2em;
 }
 /*Portfolio*/
 #Portfolio {
   background: url("../../public/profil.png") no-repeat;
   background-position: 70%;
-  background-size: 60%;
+  background-size: 700px;
   .wrapperTitle {
-    align-self: center;
-    margin: 1em 0;
+    transform: translateY(20%);
     h1 {
       font-size: $title-size;
       color: $primary-color;
@@ -151,13 +151,17 @@ h1 {
 }
 /*My work*/
 .wrapperCard {
-  display: grid;
-  justify-content: space-around;
-  min-height: 100%;
-  justify-content: space-around;
-  align-content: space-around;
+  // display: grid;
+  // justify-content: space-around;
+  // min-height: 100%;
+  // justify-content: space-around;
+  // align-content: space-around;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   row-gap: 40px;
   .card {
-    width: 100%;
+    width: 40%;
     height: fit-content;
     display: grid;
     box-shadow: 2px 2px 10px #9996a0, -2px -2px 10px #aba9af;
@@ -167,6 +171,8 @@ h1 {
       transition: 1s;
       img {
         text-align: center;
+        height: 210px;
+        width: 200px;
       }
     }
     .description {
@@ -202,31 +208,10 @@ h1 {
 .wrapperCard .card:hover .wrapperImage {
   display: none;
 }
-@media (max-width: 640px) {
-  .wrapperCard {
-    height: 100%;
-    grid-template-rows: repeat(2,45%);
-    grid-template-columns: repeat(2,45%);
-    .card {
-      grid-template-rows: 0.6fr 0.4fr;
-      height:fit-content; 
-    }
-  }
-}
-@media (min-width: 640px) {
-  .wrapperCard {
-    height: 100%;
-    grid-template-rows: repeat(2,50%);
-    grid-template-columns: repeat(3,30%);
-    .card {
-      grid-template-rows: repeat(2, fit-content);
-    }
-  }
-}
 /*Contact*/
 #Contact {
   .bg-image {
-    background: url("../../public/contact.svg") no-repeat center/90%;
+    background: url("../../public/contact.svg") no-repeat center/90vw;
     .mycontact {
       h1 {
         color: $primary-color;
