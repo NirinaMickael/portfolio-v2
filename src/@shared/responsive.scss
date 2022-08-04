@@ -7,28 +7,60 @@
   }
 }
 @media (max-width: 500px) {
+  // .header {
+  //   z-index: 33;
+  //   position: fixed;
+  //   background-color: $primary-color;
+  //   h1 {
+  //     margin: 0.5em;
+  //   }
+  //   .buttonToggle {
+  //     font-size: $subtitle-size;
+  //     cursor: pointer;
+  //     color: $secondary-color;
+  //     position: absolute;
+  //     top: 0;
+  //     right: 0;
+  //     margin: 0.5em;
+  //   }
+  // }
+  .nav {
+    background-color: $primary-color;
+    ul {
+      display: grid;
+      align-content: center;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4,.15fr);
+      li {
+        color: $secondary-color;
+        font-size: 25px;
+        &:hover {
+          background: none;
+          color: $third-color;
+        }
+      }
+    }
+  }
   /*Portfolio*/
   #Portfolio {
     background: none;
-    padding: 0;
   }
   .BaseWrapper {
-    padding: 0.3em;
+    padding: 1em;
   }
 }
 
 @media (max-width: 755px) {
   .wrapperCard {
     row-gap: 20px;
-    height:max-content;
+    height: max-content;
     .card {
       grid-template-rows: 0.6fr 0.4fr;
       height: fit-content;
       width: 45%;
-    //   background-color: #9d0b28;
       align-self: center;
       padding: 2em;
-      p{
+      p {
         color: black;
       }
       .description {
@@ -45,15 +77,15 @@
   }
 }
 @media (max-width: 640px) {
-    #Portfolio {
-        background: none;
-    }
-    #MyWork{
-        height:200vh;
-    }
+  #Portfolio {
+    background: none;
+  }
+  #MyWork {
+    height: 200vh;
+  }
   .wrapperCard {
     row-gap: 20px;
-    height:max-content;
+    height: max-content;
     .card {
       grid-template-rows: 0.6fr 0.4fr;
       height: fit-content;
