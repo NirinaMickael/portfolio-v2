@@ -51,9 +51,8 @@ const Portfolio = () => {
           Since I have math skills and I know how to code, <br />I aim to become a
           data scientist and a good developer.
         </h3>
-        <br />
         <h4 className="text-s subSectionTitle">All Tech Stacks</h4>
-        <div className="w-2/4 tech">
+        <div className="tech">
           {
             Data.map(e=>{
               return <div className=" btn py-1 px-2 my-2 text-xs mx-2 border-b-4 rounded">{e.label}</div>

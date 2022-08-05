@@ -38,6 +38,7 @@ export default function Form({ addRemark }: { addRemark: any }) {
       animate="visible"
     >
       <form
+      
       onSubmit={onSubmit}
       >
         <div className="status">

@@ -3,7 +3,6 @@
   #Portfolio {
     background-position: 100%;
     background-size: 500px;
-    display: block;
   }
 }
 @media (max-width: 500px) {
@@ -27,6 +26,7 @@
   /*Portfolio*/
   #Portfolio {
     background: none;
+    background-size: auto;
   }
   .BaseWrapper {
     padding: 1em;
@@ -63,6 +63,9 @@
   #Portfolio {
     background: none;
   }
+  .wrapper-form{
+    flex-basis: 100%;
+  }
   #MyWork {
     height: 200vh;
   }
@@ -75,7 +78,7 @@
       width: 95%;
       background-color: #9d0b28;
       align-self: center;
-      padding: 2em;
+      padding: 1em;
       .description {
         color: $secondary-color;
       }

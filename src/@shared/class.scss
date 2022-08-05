@@ -76,7 +76,7 @@ h1 {
 .app {
   overflow-y: scroll;
   // max-height: 100vh;
-  min-width: 100vw;
+  min-width: 400px;
 }
 
 /* HEADER*/
@@ -122,8 +122,10 @@ h1 {
   background: url("../../public/profil.png") no-repeat;
   background-position: 70%;
   background-size: 700px;
+  display: grid;
+  align-content: center;
   .wrapperTitle {
-    transform: translateY(20%);
+    // transform: translateY(20%);
     h1 {
       font-size: $title-size;
       color: $primary-color;
@@ -143,6 +145,7 @@ h1 {
   }
   .tech {
     margin: 0.5em;
+    width: 80%;
     display: flex;
     flex-wrap: wrap;
     div {
