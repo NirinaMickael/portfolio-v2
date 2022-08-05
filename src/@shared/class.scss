@@ -7,7 +7,8 @@ $text-size: 20px;
 * {
   transition: background 0.3s ease-in-out;
 }
-html, .app {
+html,
+.app {
   scroll-behavior: smooth;
 }
 /*Commun*/
@@ -53,7 +54,8 @@ h1 {
   width: 100px;
   height: 200px;
 }
-.sectionTitle,.subSectionTitle {
+.sectionTitle,
+.subSectionTitle {
   font-size: $subtitle-size;
   color: #9d0b28;
   &::after {
@@ -139,13 +141,12 @@ h1 {
   .button {
     align-self: flex-end;
   }
-  .tech{
-    margin: .5em;
+  .tech {
+    margin: 0.5em;
     display: flex;
     flex-wrap: wrap;
-    div{
+    div {
       background-color: $secondary-color;
-
     }
   }
 }
@@ -156,10 +157,10 @@ h1 {
   // min-height: 100%;
   // justify-content: space-around;
   // align-content: space-around;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: space-around;
-   row-gap: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  row-gap: 40px;
   .card {
     width: 40%;
     height: fit-content;
@@ -177,10 +178,7 @@ h1 {
     }
     .description {
       transition: 0.5s;
-    }
-    .cardHover {
-      transition: 0.5s;
-      display: none;
+    } 
       .btn {
         background-color: $secondary-color;
         border-color: #ffffff;
@@ -190,24 +188,23 @@ h1 {
           color: $secondary-color;
         }
       }
-    }
   }
 }
-.wrapperCard .card:hover {
-  background-color: #9d0b28;
-  align-self: center;
-  padding: 2em;
-}
-.wrapperCard .card:hover .description {
-  color: $secondary-color;
-}
-.wrapperCard .card:hover .cardHover {
-  transform: translateY(-3px);
-  display: block;
-}
-.wrapperCard .card:hover .wrapperImage {
-  display: none;
-}
+// .wrapperCard .card:hover {
+//   background-color: #9d0b28;
+//   align-self: center;
+//   padding: 2em;
+// }
+// .wrapperCard .card:hover .description {
+//   color: $secondary-color;
+// }
+// .wrapperCard .card:hover .cardHover {
+//   transform: translateY(-3px);
+//   display: block;
+// }
+// .wrapperCard .card:hover .wrapperImage {
+//   display: none;
+// }
 /*Contact*/
 #Contact {
   .bg-image {
@@ -236,9 +233,9 @@ h1 {
     bottom: 0;
     grid-template-rows: 15% 70% 10%;
     align-content: space-around;
-    .user{
-      &::before{
-        content:'';
+    .user {
+      &::before {
+        content: "";
         display: inline-block;
         width: 40px;
         height: 40px;
@@ -250,18 +247,18 @@ h1 {
     .wrapperChat {
       display: grid;
       overflow: auto;
-      .message{
+      .message {
         font-weight: lighter;
         box-shadow: 1px 2px 4px #9996a0;
         height: fit-content;
         word-break: break-all;
       }
-      .other{
+      .other {
         background-color: $secondary-color;
-        color: $primary-color;;
+        color: $primary-color;
         justify-self: flex-start;
       }
-      .own{
+      .own {
         background-color: $primary-color;
         color: $secondary-color;
         justify-self: flex-end;

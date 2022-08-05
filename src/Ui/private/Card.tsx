@@ -11,7 +11,7 @@ const Card = React.memo(({ card }: { card: ITCard }) => {
           <img src={card.image} alt="dsdsd" className="m-auto w-40 h-40" />
         </div>
         <div className="description">
-          <p className="md:text-center text-xs text-justify mx-1">{card.description}</p>
+          <p className="md:text-center md:text-base text-sm text-justify mx-1">{card.description}</p>
         </div>
         <div className="cardHover">
           <div className="wrapperIcon w-full flex p-2">
