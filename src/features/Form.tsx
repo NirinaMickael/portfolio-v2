@@ -3,8 +3,18 @@ import { motion } from "framer-motion";
 import { Transition } from "../@core/data/variant";
 import { useForm } from "react-hook-form";
 import { IRemark } from "../@core/model/ITData";
-import {yupResolver} from "@hookform/resolvers/yup"
+import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
+
+const CircularIndeterminate = () => {
+  return (
+    <Box>
+      <CircularProgress />
+    </Box>
+  );
+};
 var data: IRemark[] = [
   {
     id: 1,
@@ -15,19 +25,25 @@ var data: IRemark[] = [
 ];
 
 const schema = yup.object({
-  remark : yup.string().required().max(200).min(5),
-  status : yup.string().required(),
-  username : yup.string().required().min(5)
-})
-export default function Form({ addRemark }: { addRemark: any }) {
+  remark: yup.string().required().max(200).min(5),
+  status: yup.string().required(),
+  username: yup.string().required().min(5),
+});
+export default function Form({
+  addRemark,
+  loading,
+}: {
+  addRemark: any;
+  loading: boolean;
+}) {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<IRemark>({
-    resolver:yupResolver(schema)
+    resolver: yupResolver(schema),
   });
-  const onSubmit = handleSubmit(data=>{
+  const onSubmit = handleSubmit((data) => {
     addRemark(data);
   });
   return (
@@ -37,10 +53,7 @@ export default function Form({ addRemark }: { addRemark: any }) {
       initial="hidden"
       animate="visible"
     >
-      <form
-      
-      onSubmit={onSubmit}
-      >
+      <form onSubmit={onSubmit}>
         <div className="status">
           <input
             type="text"
@@ -59,7 +72,7 @@ export default function Form({ addRemark }: { addRemark: any }) {
             placeholder="Username"
             {...register("username")}
           />
-            <small> {errors.username?.message}</small>
+          <small> {errors.username?.message}</small>
         </div>
         <div className="Remark">
           <textarea
@@ -67,11 +80,12 @@ export default function Form({ addRemark }: { addRemark: any }) {
             {...register("remark")}
             placeholder="Your remark"
           ></textarea>
-            <small> {errors.remark?.message}</small>
+          <small> {errors.remark?.message}</small>
         </div>
-        <div className="button">
-          <button type="submit" className="buttonNeomorphic p-2">
-            <span>Envoyer</span>
+        <div className="button w-full">
+          <button type="submit" className="buttonNeomorphic p-2 w-full">
+            {loading && <CircularIndeterminate />}
+            <span className="py-2">Envoyer</span>
           </button>
         </div>
       </form>

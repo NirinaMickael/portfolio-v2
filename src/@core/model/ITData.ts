@@ -48,7 +48,7 @@ export interface ITTecno {
 export interface ITAction{
     id : number;
     label : string;
-    icon : string;
+    url : string;
 }
 
 export interface IMessage {

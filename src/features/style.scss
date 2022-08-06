@@ -104,6 +104,9 @@
         color: $secondary-color;
         font-size: $text-size;
         border: none;
+        display: flex;
+        justify-content: center;
+        column-gap: 10px;
         &:hover{
             background: $secondary-color;
             color: $third-color;

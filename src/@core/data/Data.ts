@@ -144,12 +144,12 @@ export const Cards: ITCard[] = [
       {
         id: 0,
         label: "Github",
-        icon: "/github-.svg",
+        url:"https://github.com/NirinaMickael"
       },
       {
         id: 1,
         label: "Demo",
-        icon: "/eyes.svg",
+        url: "https://front-chat-chi.vercel.app/",
       },
     ],
     tecno: [
@@ -184,12 +184,12 @@ export const Cards: ITCard[] = [
       {
         id: 0,
         label: "Github",
-        icon: "/github-.svg",
+        url:"https://github.com/NirinaMickael"
       },
       {
         id: 1,
         label: "Demo",
-        icon: "/eyes.svg",
+        url: "/eyes.svg",
       },
     ],
     tecno: [
@@ -219,12 +219,12 @@ export const Cards: ITCard[] = [
       {
         id: 0,
         label: "Github",
-        icon: "/github-.svg",
+        url:"https://github.com/NirinaMickael"
       },
       {
         id: 1,
         label: "Demo",
-        icon: "/eyes.svg",
+        url: "/eyes.svg",
       },
     ],
     tecno: [
@@ -244,34 +244,34 @@ export const Cards: ITCard[] = [
   },
   {
     id: 2,
-    image: "/sudoku.gif",
+    image: "./v1.gif",
     actions: [
       {
         id: 0,
         label: "Github",
-        icon: "/github-.svg",
+        url:"https://github.com/NirinaMickael"
       },
       {
         id: 1,
         label: "Demo",
-        icon: "/eyes.svg",
+        url: "http://mickaelnirina.orgfree.com",
       },
     ],
     tecno: [
       {
         id: 0,
-        label: "Sudoku",
+        label: "js",
         image: "/js.svg",
       },
       {
         id: 1,
         label: "Css",
         image: "/css.svg",
-      },
+      }
     ],
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia soluta repudiandae ipsa adipisci, voluptatibus ea nobis necessitatibus maxime minima qui autem veritatis odit itaque quia commodi cumque magnam neque delectus",
-  },
+      "this is my first project , I only use basic languages ​​for website creation like html/css and js",
+  }
 ];
 
 export const Message: IMessage[] = [
